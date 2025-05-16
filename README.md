@@ -4,9 +4,11 @@ This project implements a multi-agent system designed to automatically identify 
 
 ##  Multi-Agent Bug Fixing Architecture
 
+[![Watch the video demonstration](https://img.youtube.com/vi/GMbT9j8fp3M/maxresdefault.jpg)](https://youtu.be/GMbT9j8fp3M)
+
 Below is a diagram illustrating the high-level architecture of the multi-agent bug fixing system.
 
-![Architecture Diagram](images/agent_architecture_diagram.png)
+![Architecture Diagram](assets/architecture.png)
 
 ## 🚀 Getting Started
 
@@ -67,13 +69,13 @@ b.  Extract a "single-file" bug from the test dataset. The following script will
 Once the environment is set up and the data is prepared (`data.json` exists), you can run the multi-agent system.
 
 ```bash
-python main.py --use_problem_statement --original_file SWE-bench_Lite\django__django\django\forms\widgets.py
+python main.py --use_problem_statement --original_file django\django\forms\widgets.py
 ```
 
 **Argument Explanations:**
 
 *   `--use_problem_statement`: This flag instructs the agent to automatically load the problem description from the `data.json` file generated in the previous step.
-*   `--original_file SWE-bench_Lite\django__django\django\forms\widgets.py`: This argument specifies the path to the original buggy code file within the cloned SWE-bench Lite dataset.
+*   `--original_file django\django\forms\widgets.py`: This argument specifies the path to the original buggy code file within the cloned SWE-bench Lite dataset.
 
 ## 📊 Results and Evaluation Outputs
 
@@ -103,7 +105,7 @@ For more details on the evaluation process, refer to the [SWE-bench Evaluation G
 
 The detailed evaluation results using the SWE-bench harness, are summarized in the table below:
 
-![Evaluation Results Table](images/evaluation_results_table.png)
+![Evaluation Results Table](assets/evaluation_results_table.png)
 
 ## 📝 Logging
 
