@@ -50,7 +50,44 @@ Install the necessary Python packages listed in the `requirements.txt` file.
 pip install -r requirements.txt
 ```
 
-### 4. Data Preparation: Extracting a Buggy Code Sample
+### 4. Configure API Credentials
+
+This project requires API credentials for Google's Generative AI models. You need to set up a `.env` file in the directory `bug_fixer_agent`. Create a file named `.env` and add the following content based on your chosen method:
+
+**Option 1: Using Gemini with Google AI Studio (Default)**
+
+This is the default configuration and uses an API key.
+
+```env
+GOOGLE_GENAI_USE_VERTEXAI=FALSE
+GOOGLE_API_KEY=PASTE_YOUR_ACTUAL_API_KEY_HERE
+```
+Replace `PASTE_YOUR_ACTUAL_API_KEY_HERE` with your actual Google AI Studio API key.
+
+**Option 2: Using Gemini with Google Cloud Vertex AI**
+
+If you prefer to use Vertex AI, configure your `.env` file as follows:
+
+```env
+GOOGLE_GENAI_USE_VERTEXAI=TRUE
+GOOGLE_CLOUD_PROJECT=YOUR_PROJECT_ID
+GOOGLE_CLOUD_LOCATION=LOCATION
+```
+Replace `YOUR_PROJECT_ID` with your Google Cloud Project ID and `LOCATION` with your Vertex AI region (e.g., `us-central1`).
+
+**Important for Vertex AI:**
+If you choose this option, you also need to:
+1.  Ensure you have a service account key file named `sa-key.json` in the `bug_fixer_agent/` directory.
+2.  Uncomment line 12 in the `bug_fixer_agent/agent.py` file. This line is:
+    ```python
+    # os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "bug_fixer_agent/sa-key.json"
+    ```
+    Change it to:
+    ```python
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "bug_fixer_agent/sa-key.json"
+    ```
+
+### 5. Data Preparation: Extracting a Buggy Code Sample
 
 To work with a specific bug instance, you'll need to clone the SWE-bench Lite dataset and extract a data point.
 
@@ -67,7 +104,7 @@ b.  Extract a "single-file" bug from the test dataset. The following script will
     ```
     *This script is assumed to be in your repository and configured to fetch the desired bug instance by instance_id from the test dataset.*
 
-### 5. Running the Bug-Fixing Agent
+### 6. Running the Bug-Fixing Agent
 
 Once the environment is set up and the data is prepared (`data.json` exists), you can run the multi-agent system.
 

@@ -9,7 +9,7 @@ from .sub_agents.code_generator import code_generator_agent
 load_dotenv()
 
 # Set up credentials explicitly (Uncomment ONLY when using Google Cloud Vertex AI)
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "bug_fixer_agent/sa-key.json"
+# os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "bug_fixer_agent/sa-key.json"
 
 orchestrator_agent = SequentialAgent(
     name="orchestrator_agent",
