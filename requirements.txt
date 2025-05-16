@@ -1,0 +1,5 @@
+poetry
+google-adk[cli]
+python-dotenv
+pandas
+pyarrow
