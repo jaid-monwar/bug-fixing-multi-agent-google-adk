@@ -7,7 +7,7 @@ This project implements a multi-agent system designed to automatically identify 
 ### 🎬 Video Demonstration
 *Click below to watch the demonstration video:*
 
-[![Watch the video demonstration](https://img.youtube.com/vi/GMbT9j8fp3M/maxresdefault.jpg)](https://youtu.be/GMbT9j8fp3M)
+[![Watch the video demonstration](https://img.youtube.com/vi/GMbT9j8fp3M/hqdefault.jpg)](https://youtu.be/GMbT9j8fp3M)
 
 Below is a diagram illustrating the high-level architecture of the multi-agent bug fixing system.
 
