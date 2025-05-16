@@ -8,7 +8,7 @@ This project implements a multi-agent system designed to automatically identify 
 
 Below is a diagram illustrating the high-level architecture of the multi-agent bug fixing system.
 
-![Architecture Diagram](assets/architecture.png)
+![Architecture Diagram](assets/agent_architecture_diagram.png)
 
 ## 🚀 Getting Started
 
